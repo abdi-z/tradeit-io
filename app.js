@@ -4,11 +4,12 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var mongoose = require("mongoose");
 
 var homeRouter = require("./routes");
 var usersRouter = require("./routes/users");
 var contactusRouter = require("./routes/contactus");
-var tradeRouter = require("./routes/trade");
+var tradesRouter = require("./routes/trades");
 var createRouter = require("./routes/create");
 
 var app = express();
@@ -28,7 +29,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", homeRouter);
 app.use("/users", usersRouter);
 app.use("/contactus", contactusRouter);
-app.use("/trade", tradeRouter);
+app.use("/trades", tradesRouter);
 app.use("/create", createRouter);
 
 // catch 404 and forward to error handler
@@ -46,5 +47,13 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+mongoose
+  .connect(
+    "mongodb+srv://abdi:k4t5rk0o1@servercluster.q691c.mongodb.net/?retryWrites=true&w=majority",
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
+  .then(() => console.log("Connected to mongo..."))
+  .catch((error) => console.log(error.message));
 
 module.exports = app;

@@ -3,11 +3,7 @@ body {
   overflow-x: hidden;
 }
 
-.meclass {
-  background-color: red;
-}
-
-#footer {
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
