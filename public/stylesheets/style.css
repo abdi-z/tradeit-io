@@ -1,8 +1,20 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.meclass {
+  background-color: red;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer */
+  background: #6cf;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }

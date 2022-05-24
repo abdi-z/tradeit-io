@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("home", { title: "Tradeit ©" });
+  res.render("index", { title: "Tradeit.gg" });
 });
 
 module.exports = router;
