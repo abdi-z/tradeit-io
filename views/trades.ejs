@@ -1,14 +1,12 @@
-<% if (trades) { trades.map((item)=>{ %>
-<!-- <h2><%= item.title %></h2> -->
-
-<div class="card" style="width: 18rem">
-  <img src="..." class="card-img-top" alt="..." />
-  <div class="card-body">
-    <h5 class="card-title"><%= item.title %></h5>
-    <p class="card-text">
-     <%= item.description %>
-    </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="row">
+  <% if (trades) { trades.map((item)=>{ %>
+  <div class="card col-md-3 m-3" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title"><%= item.title %></h5>
+      <p class="card-text"><%= item.description %></p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
   </div>
+  <% })} %>
 </div>
-<% })} %>
