@@ -1,14 +1,7 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   overflow-x: hidden;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Height of the footer */
-  background: #6cf;
+  background-color: antiquewhite;
 }
 
 a {
