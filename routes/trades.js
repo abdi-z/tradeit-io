@@ -9,10 +9,19 @@ router.get("/", function (req, res, next) {
       console.log(err);
     } else {
       console.log(data);
-      res.render("trades",{trades:data});
+      res.render("trades", { trades: data });
     }
   });
-  
+});
+
+router.get("/:id", function (req, res, next) {
+  Trade.findById(req.params.id, (err, data) => {
+    if (err) {
+      res.send(err)
+    } else {
+      res.render("details", { trade: data });
+    }
+  });
 });
 
 module.exports = router;
