@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+const multer=require("multer")
+const upload=multer({dest:'/uploads/'})
 /* GET home page. */
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
