@@ -1,11 +1,14 @@
-<div class="m-5">
+<div class="m-5 border border-4 p-4">
+  <h1 class="py-2">Let's get started</h1>
   <form class="row g-3" method="POST" action="/create">
     <div class="col-md-6">
-      <label for="title" class="form-label">Title</label>
-      <input type="text" class="form-control" id="title" name="title" />
+      <label for="title" class="form-label"
+        >Give a brief title for your item:</label
+      >
+      <input type="text" class="form-control" id="title" name="title" placeholder="IPhone X 256Gb 1 year used"/>
     </div>
     <div class="col-md-6">
-      <label for="phone" class="form-label">Phone Number</label>
+      <label for="phone" class="form-label">Contact:</label>
       <input type="number" class="form-control" id="phone" name="phone" />
     </div>
     <div class="col-6">
@@ -19,14 +22,19 @@
       />
     </div>
     <div class="col-md-3">
-      <label for="files" class="form-label">Multiple files input example</label>
+      <label for="files" class="form-label"
+        >Add media for your trade (psst! 4:3 is the best aspect ratio)</label
+      >
       <input class="form-control" type="file" id="files" name="file" multiple />
     </div>
 
-    <div class="col-7">
-      <label for="description" class="form-label">Description</label>
+    <div class="col-12">
+      <label for="description" class="form-label"
+        >Give a comprehensive description of your item: e.g. Condition, More
+        insight of the item, Your expectation of in-return item etc.</label
+      >
       <input
-        type="text"
+        type="textarea"
         class="form-control"
         id="description"
         placeholder="A 10/10 condition Iphone X"
@@ -46,9 +54,18 @@
         <option>Multan</option>
       </select>
     </div>
-    <div class="col-md-2">
-      <label for="zip" class="form-label">Zip</label>
-      <input type="number" class="form-control" id="zip" name="zip" />
+    <div class="col-md-4">
+      <label for="category" class="form-label"
+        >Choose a relevant category:</label
+      >
+      <select id="category" class="form-select" name="category">
+        <option selected>Choose...</option>
+        <option>Electronics</option>
+        <option>Automotives</option>
+        <option>Furniture and Lifestyle</option>
+        <option>Sports and other Equipments</option>
+        <option>Fashion and Beauty</option>
+      </select>
     </div>
     <div class="col-12">
       <div class="form-check">
@@ -62,7 +79,7 @@
       </div>
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <button type="submit" class="btn btn-dark float-end">Proceed</button>
     </div>
   </form>
 </div>
