@@ -1,45 +1,42 @@
 <div class="m-5">
-  <form class="row g-3">
+  <form class="row g-3" method="POST" action="/create">
     <div class="col-md-6">
-      <label for="inputTitle" class="form-label">Email</label>
-      <input type="text" class="form-control" id="inputTitle" />
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name="title" />
     </div>
     <div class="col-md-6">
-      <label for="inputDescription" class="form-label">Phone Number</label>
-      <input type="number" class="form-control" id="inputDescription" />
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="number" class="form-control" id="phone" name="phone" />
     </div>
     <div class="col-6">
-      <label for="inputAddress" class="form-label">Address</label>
+      <label for="address" class="form-label">Address</label>
       <input
         type="text"
         class="form-control"
-        id="inputAddress"
+        id="address"
         placeholder="1234 Main St"
+        name="address"
       />
     </div>
     <div class="col-md-3">
-      <label for="formFileMultiple" class="form-label"
-        >Multiple files input example</label
-      >
-      <input class="form-control" type="file" id="formFileMultiple" multiple />
+      <label for="files" class="form-label">Multiple files input example</label>
+      <input class="form-control" type="file" id="files" name="file" multiple />
     </div>
+
     <div class="col-7">
-      <label for="inputDescription" class="form-label">Description</label>
+      <label for="description" class="form-label">Description</label>
       <input
         type="text"
         class="form-control"
-        id="inputAddress"
-        placeholder="1234 Main St"
+        id="description"
+        placeholder="A 10/10 condition Iphone X"
+        name="description"
       />
     </div>
 
-    <!-- <div class="col-md-6">
-      <label for="inputCity" class="form-label">City</label>
-      <input type="text" class="form-control" id="inputCity" />
-    </div> -->
     <div class="col-md-4">
-      <label for="inputCity" class="form-label">City</label>
-      <select id="inputCity" class="form-select">
+      <label for="city" class="form-label">City</label>
+      <select id="city" class="form-select" name="city">
         <option selected>Choose...</option>
         <option>Lahore</option>
         <option>Islamabad</option>
@@ -50,13 +47,18 @@
       </select>
     </div>
     <div class="col-md-2">
-      <label for="inputZip" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="inputZip" />
+      <label for="zip" class="form-label">Zip</label>
+      <input type="number" class="form-control" id="zip" name="zip" />
     </div>
     <div class="col-12">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck" />
-        <label class="form-check-label" for="gridCheck"> Trial Allowed </label>
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="return"
+          name="return"
+        />
+        <label class="form-check-label" for="return"> Return possible </label>
       </div>
     </div>
     <div class="col-12">
