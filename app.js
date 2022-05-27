@@ -1,5 +1,6 @@
 var createError = require("http-errors");
 var expressLayouts = require("express-ejs-layouts");
+const crypto=require("crypto");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
@@ -24,11 +25,11 @@ app.set("view engine", "ejs");
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 app.use("/", homeRouter);
 app.use("/users", usersRouter);
 app.use("/contactus", contactusRouter);

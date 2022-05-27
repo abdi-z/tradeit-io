@@ -1,15 +1,21 @@
 <div class="m-5 border border-4 p-4">
   <h1 class="py-2">Let's get started</h1>
-  <form class="row g-3" method="POST" action="/create">
+  <form class="row g-3" method="POST" action="/create" enctype="multipart/form-data">
     <div class="col-md-6">
       <label for="title" class="form-label"
         >Give a brief title for your item:</label
       >
-      <input type="text" class="form-control" id="title" name="title" placeholder="IPhone X 256Gb 1 year used"/>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        placeholder="IPhone X 256Gb 1 year used"
+      />
     </div>
     <div class="col-md-6">
-      <label for="phone" class="form-label">Contact:</label>
-      <input type="number" class="form-control" id="phone" name="phone" />
+      <label for="contact" class="form-label">Contact:</label>
+      <input type="number" class="form-control" id="contact" name="contact" />
     </div>
     <div class="col-6">
       <label for="address" class="form-label">Address</label>
@@ -21,11 +27,12 @@
         name="address"
       />
     </div>
+
     <div class="col-md-3">
       <label for="files" class="form-label"
         >Add media for your trade (psst! 4:3 is the best aspect ratio)</label
       >
-      <input class="form-control" type="file" id="files" name="file" multiple />
+      <input class="form-control" type="file" id="files" name="file"/>
     </div>
 
     <div class="col-12">
@@ -72,10 +79,12 @@
         <input
           class="form-check-input"
           type="checkbox"
-          id="return"
-          name="return"
+          id="availability"
+          name="availability"
         />
-        <label class="form-check-label" for="return"> Return possible </label>
+        <label class="form-check-label" for="availability">
+          Return possible
+        </label>
       </div>
     </div>
     <div class="col-12">

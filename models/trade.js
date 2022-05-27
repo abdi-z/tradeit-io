@@ -2,9 +2,11 @@ const mongoose = require("mongoose");
 
 var tradeSchema = mongoose.Schema({
   title: String,
+  contact: Number,
+  address: String,
   description: String,
-  location: String,
-  picture: String,
+  city: String,
+  category: String,
   date: String,
 });
 
