@@ -8,7 +8,6 @@ var jsonParser = bodyParser.json();
 const crypto = require("crypto");
 const multer = require("multer");
 const { GridFsStorage } = require("multer-gridfs-storage");
-
 const Grid = require("gridfs-stream");
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -109,18 +108,21 @@ router.get("/files/:filename", (req, res) => {
 //router /image/:filename
 router.get("/image/:filename", (req, res) => {
   gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
+    // Check if file
     if (!file || file.length === 0) {
       return res.status(404).json({
         err: "No file exists",
       });
     }
-    //check if image
-    if (file.contentType === "image/jpeg" || file.contentType === "img/png") {
-      var readstream = gfs.createReadStream(file.filename);
+
+    // Check if image
+    if (file.contentType === "image/jpeg" || file.contentType === "image/png") {
+      // Read output to browser
+      const readstream = gfs.createReadStream(req.params.filename);
       readstream.pipe(res);
     } else {
       res.status(404).json({
-        err: "Not an image bro",
+        err: "Not an image",
       });
     }
   });
