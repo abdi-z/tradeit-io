@@ -5,26 +5,27 @@
       <img
         src="<%=`/uploads/${trade.image}`%>"
         class="card-img-top responsive-img"
-        style="max-width: 400px"
+        style="max-width: 400px; max-height: 400px"
         alt="image will come here"
       />
     </div>
     <div class="col-md-5 border border-dark border-4 p-2 rounded-top">
-      <h2><%=trade.title %></h2>
+      <h2><b><%=trade.title %></b></h2>
       <hr />
       <p>Location: <%=trade.city %></p>
       <p>Return/Trial:<%=trade.availability%></p>
     </div>
   </div>
+  <br />
   <div class="row">
     <div class="col-12">
-      <h4>Relevant Category: <%=trade.category %></h4>
-      <h2>Description:</h2>
+      <h4><b>Relevant Category:</b> <%=trade.category %></h4>
+      <h2><b>Description:</b></h2>
       <p><%=trade.description %></p>
-      <h3>Trader's Details</h3>
-      <h4>Contact:</h4>
+      <h3><b>Trader's Details</b></h3>
+      <h4><b>Contact:</b></h4>
       <p><%=trade.contact %></p>
-      <h4>Address:</h4>
+      <h4><b>Address:</b></h4>
       <p><%=trade.address %></p>
     </div>
   </div>

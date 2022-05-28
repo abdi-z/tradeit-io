@@ -28,13 +28,17 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="..." class="d-block w-100" alt="..." />
+        <img
+          src="/uploads/fifteenpercent.png"
+          class="d-block w-100"
+          alt="..."
+        />
       </div>
       <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="..." />
+        <img src="/uploads/next.png" class="d-block w-100" alt="..." />
       </div>
       <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="..." />
+        <img src="/uploads/bike.png" class="d-block w-75" alt="..." />
       </div>
     </div>
     <button
@@ -68,8 +72,8 @@
     />
     <div class="card-body">
       <h5 class="card-title"><%=item.title%></h5>
-      <p class="card-text"><%=item.description%></p>
-      <a href="<%=`/trades/${item._id}`%>" class="btn btn-primary">Details</a>
+      <p class="card-text"><%=item.description.substring(0,35)+"..."%></p>
+      <a href="<%=`/trades/${item._id}`%>" class="btn btn-dark">Details</a>
     </div>
   </div>
   <% })} %>
