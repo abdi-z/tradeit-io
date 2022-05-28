@@ -1,6 +1,11 @@
 <div class="m-5 border border-4 p-4">
   <h1 class="py-2">Let's get started</h1>
-  <form class="row g-3" method="POST" action="/create" enctype="multipart/form-data">
+  <form
+    class="row g-3"
+    method="POST"
+    action="/create"
+    enctype="multipart/form-data"
+  >
     <div class="col-md-6">
       <label for="title" class="form-label"
         >Give a brief title for your item:</label
@@ -29,10 +34,10 @@
     </div>
 
     <div class="col-md-3">
-      <label for="files" class="form-label"
+      <label for="file" class="form-label"
         >Add media for your trade (psst! 4:3 is the best aspect ratio)</label
       >
-      <input class="form-control" type="file" id="files" name="file"/>
+      <input class="form-control" type="file" id="file" name="file" />
     </div>
 
     <div class="col-12">

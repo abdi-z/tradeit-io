@@ -5,10 +5,6 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-const crypto = require("crypto");
-const multer = require("multer");
-const GridFsStorage = require("multer-gridfs-storage");
-const Grid = require("gridfs-stream");
 const methodOverride = require("method-override");
 var bodyParser = require("body-parser");
 
@@ -30,7 +26,7 @@ app.set("view engine", "ejs");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(bodyParser.json());
-// app.(methodOverride('_method'));
+app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
@@ -46,7 +42,7 @@ app.use(function (req, res, next) {
   next(createError(404));
 });
 //init gridfs
-let gfs;
+
 
 // error handler
 app.use(function (err, req, res, next) {
@@ -67,16 +63,8 @@ mongoose
   .then(() => console.log("Connected to mongo..."))
   .catch((error) => console.log(error.message));
 
-var conn = mongoose.createConnection(
-  "mongodb+srv://abdi:k4t5rk0o1@servercluster.q691c.mongodb.net/?retryWrites=true&w=majority"
-);
-conn.once("open", function () {
-  gfs = Grid(conn.db, mongoose.mongo);
-  gfs.collection('uploads')
-  // all set!
-});
 
-//create storage engine
-
+//route get /
+//desc Loads form
 
 module.exports = app;
