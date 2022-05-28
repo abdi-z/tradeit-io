@@ -63,9 +63,11 @@
     <img src="..." class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title"><%=item.title%></h5>
-      <p class="card-text"><%=item.description.substring(0,60)%></p>
+      <p class="card-text"><%=item.description%></p>
       <a href="<%=`/trades/${item._id}`%>" class="btn btn-primary">Details</a>
     </div>
   </div>
   <% })} %>
 </div>
+
+<!-- "mongoose": "^6.3.4", -->

@@ -17,6 +17,7 @@ var createRouter = require("./routes/create");
 
 var app = express();
 
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.use(expressLayouts);
@@ -41,7 +42,26 @@ app.use("/create", createRouter);
 app.use(function (req, res, next) {
   next(createError(404));
 });
-//init gridfs
+//lllllllllllll
+var multer = require("multer");
+
+const fileStorageEngine = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./images");
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "--" + file.originalname);
+  },
+});
+const upload = multer({ storage: fileStorageEngine });
+
+
+
+
+
+
+
+
 
 
 // error handler

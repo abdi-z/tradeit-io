@@ -8,7 +8,6 @@ var tradeSchema = mongoose.Schema({
   city: String,
   category: String,
   date: String,
-  image: String,
 });
 
 const Trade = mongoose.model("Trade", tradeSchema);
