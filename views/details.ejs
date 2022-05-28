@@ -1,7 +1,13 @@
 <div class="border border-dark border-3 p-3 m-5 rounded">
   <div class="row">
-    <div class="col-md-7">
-      <p>img will come here</p>
+    <div class="col-md-7 d-flex justify-content-center">
+      <!-- <%=`uploads/${trade.image}`%> -->
+      <img
+        src="<%=`/uploads/${trade.image}`%>"
+        class="card-img-top responsive-img"
+        style="max-width: 400px"
+        alt="image will come here"
+      />
     </div>
     <div class="col-md-5 border border-dark border-4 p-2 rounded-top">
       <h2><%=trade.title %></h2>

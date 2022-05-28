@@ -17,8 +17,9 @@ router.get("/", function (req, res, next) {
 router.get("/:id", function (req, res, next) {
   Trade.findById(req.params.id, (err, data) => {
     if (err) {
-      res.send(err)
+      res.send(err);
     } else {
+      console.log(data);
       res.render("details", { trade: data });
     }
   });

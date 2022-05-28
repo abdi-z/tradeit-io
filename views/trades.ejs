@@ -60,7 +60,12 @@
 <div class="row">
   <% if (trades) { trades.map((item)=>{ %>
   <div class="card col-md-3 m-3" style="width: 18rem">
-    <img src="..." class="card-img-top" alt="..." />
+    <img
+      src="<%=`uploads/${item.image}`%>"
+      class="card-img-top responsive-img w-1"
+      style="height: 200px"
+      alt="..."
+    />
     <div class="card-body">
       <h5 class="card-title"><%=item.title%></h5>
       <p class="card-text"><%=item.description%></p>

@@ -6,7 +6,7 @@ var multer = require("multer");
 
 const fileStorageEngine = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "./images");
+    cb(null, "./public/uploads/");
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + "--" + file.originalname);
@@ -18,7 +18,7 @@ router.get("/", function (req, res, next) {
   res.render("create");
 });
 
-router.post("/",upload.single("file") ,async function (req, res, next) {
+router.post("/", upload.single("file"), async function (req, res, next) {
   console.log(req.file);
 
   const d = new Date();
@@ -31,9 +31,10 @@ router.post("/",upload.single("file") ,async function (req, res, next) {
     city: req.body.city,
     category: req.body.category,
     date: today,
+    image: req.file.filename,
   });
   await trade.save();
-  res.send('Successfully created');
+  res.redirect("/trades");
 });
 
 module.exports = router;
