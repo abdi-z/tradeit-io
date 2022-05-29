@@ -3,16 +3,18 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+    background-color: black;
     height: 25px;
   }
   .marquee-child {
+    background-color: black;
     display: block;
-    width: 147px;
+    width: auto;
     /* width of your text div */
     height: 30px;
     /* height of your text div */
     position: absolute;
-    animation: marquee 5s linear infinite; /* change 5s value to your desired speed */
+    animation: marquee 7s linear infinite; /* change 5s value to your desired speed */
   }
   .marquee-child:hover {
     animation-play-state: paused;
@@ -28,7 +30,14 @@
   }
 </style>
 <div class="marquee-parent">
-  <div class="marquee-child">Hover on me to stop</div>
+  <div class="marquee-child">
+    <a
+      href="https://github.com/mishaosipovprodigy2"
+      target="_none"
+      style="text-decoration: none; color: white"
+      >Like what you see? Visit my github for more awesome projects</a
+    >
+  </div>
 </div>
 <div class="row">
   <div
