@@ -32,6 +32,7 @@ router.post("/", upload.single("file"), async function (req, res, next) {
     category: req.body.category,
     date: today,
     image: req.file.filename,
+    availability: req.body.availability,
   });
   await trade.save();
   res.redirect("/trades");

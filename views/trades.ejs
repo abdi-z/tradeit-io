@@ -61,9 +61,9 @@
     </button>
   </div>
 </div>
-<div class="row">
+<div class="row d-flex justify-content-center">
   <% if (trades) { trades.map((item)=>{ %>
-  <div class="card col-md-3 m-3" style="width: 18rem">
+  <div class="card col-md-3 m-3" style="width: 24rem">
     <img
       src="<%=`uploads/${item.image}`%>"
       class="card-img-top responsive-img w-1"
@@ -71,7 +71,8 @@
       alt="..."
     />
     <div class="card-body">
-      <h5 class="card-title"><%=item.title%></h5>
+      <h5 class="card-title"><b><%=item.title%></b></h5>
+      <hr />
       <p class="card-text"><%=item.description.substring(0,35)+"..."%></p>
       <a href="<%=`/trades/${item._id}`%>" class="btn btn-dark">Details</a>
     </div>

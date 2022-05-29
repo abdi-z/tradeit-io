@@ -4,7 +4,11 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
-  Trade.find({}, (err, data) => {
+  let formated = req.query.search + "";
+  const srch =
+    formated.charAt(0).toUpperCase() + formated.slice(1).toLowerCase();
+  console.log(srch);
+  Trade.find({ city: srch }, (err, data) => {
     if (err) {
       console.log(err);
     } else {
@@ -14,16 +18,4 @@ router.get("/", function (req, res, next) {
   });
 });
 
-router.get("/:id", function (req, res, next) {
-  Trade.findById(req.params.id, (err, data) => {
-    if (err) {
-      res.send(err);
-    } else {
-      console.log(data);
-      res.render("details", { trade: data });
-    }
-  });
-});
-
-router.get("/:id")
 module.exports = router;

@@ -14,6 +14,7 @@ var usersRouter = require("./routes/users");
 var contactusRouter = require("./routes/contactus");
 var tradesRouter = require("./routes/trades");
 var createRouter = require("./routes/create");
+var searchRouter = require("./routes/search");
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use("/users", usersRouter);
 app.use("/contactus", contactusRouter);
 app.use("/trades", tradesRouter);
 app.use("/create", createRouter);
+app.use("/search", searchRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

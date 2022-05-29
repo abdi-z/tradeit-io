@@ -1,5 +1,18 @@
-<div class="border border-dark border-3 p-3 m-5 rounded">
-  <div class="row">
+<style>
+  img {
+    transition: transform 0.2s; /* Animation */
+    margin: 0 auto;
+  }
+
+  img:hover {
+    transform: scale(
+      1.2
+    ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+</style>
+
+<div class="border ms-2 me-2 rounded" style="background-color: white">
+  <div class="row m-1" style="background-color: black">
     <div class="col-md-7 d-flex justify-content-center">
       <!-- <%=`uploads/${trade.image}`%> -->
       <img
@@ -9,16 +22,23 @@
         alt="image will come here"
       />
     </div>
-    <div class="col-md-5 border border-dark border-4 p-2 rounded-top">
+    <div
+      class="col-md-5 border border-dark border-4 p-2 rounded-top"
+      style="color: white"
+    >
       <h2><b><%=trade.title %></b></h2>
       <hr />
       <p>Location: <%=trade.city %></p>
-      <p>Return/Trial:<%=trade.availability%></p>
+      <%let show="No" %> <% if(trade.availability==="on"){ %> <% show=" Yes" %>
+      <% } %>
+      <p>Return/Trial:<%=show%></p>
+      <button class="btn btn-danger">Ask to be removed</button>
     </div>
   </div>
   <br />
   <div class="row">
     <div class="col-12">
+      <hr />
       <h4><b>Relevant Category:</b> <%=trade.category %></h4>
       <h2><b>Description:</b></h2>
       <p><%=trade.description %></p>
