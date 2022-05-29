@@ -15,15 +15,21 @@
   <div class="row m-1" style="background-color: black">
     <div class="col-md-7 d-flex justify-content-center">
       <!-- <%=`uploads/${trade.image}`%> -->
+
       <img
         src="<%=`/uploads/${trade.image}`%>"
         class="card-img-top responsive-img"
-        style="max-width: 400px; max-height: 400px"
+        style="
+          max-width: 420px;
+          max-height: 400px;
+          min-width: 400px;
+          min-height: 400px;
+        "
         alt="image will come here"
       />
     </div>
     <div
-      class="col-md-5 border border-dark border-4 p-2 rounded-top"
+      class="col-md-5 border border-dark border-4 p-2 rounded-top p-5"
       style="color: white"
     >
       <h2><b><%=trade.title %></b></h2>
