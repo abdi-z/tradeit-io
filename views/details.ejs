@@ -6,12 +6,12 @@
 
   img:hover {
     transform: scale(
-      1.2
+      1.1
     ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 </style>
 
-<div class="border ms-2 me-2 rounded" style="background-color: white">
+<div class="border ms-5 me-5 my-2 rounded" style="background-color: white">
   <div class="row m-1" style="background-color: black">
     <div class="col-md-7 d-flex justify-content-center">
       <!-- <%=`uploads/${trade.image}`%> -->
@@ -33,12 +33,12 @@
       <% } %>
       <p>Return/Trial:<%=show%></p>
       <a href="<%=`/delete/${trade._id}`%>" class="btn btn-danger">
-        Ask to be removed</a
+        Remove the trade</a
       >
     </div>
   </div>
   <br />
-  <div class="row">
+  <div class="row ps-4 pe-4">
     <div class="col-12">
       <hr />
       <h4><b>Relevant Category:</b> <%=trade.category %></h4>
