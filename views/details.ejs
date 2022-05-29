@@ -32,7 +32,9 @@
       <%let show="No" %> <% if(trade.availability==="on"){ %> <% show=" Yes" %>
       <% } %>
       <p>Return/Trial:<%=show%></p>
-      <button class="btn btn-danger">Ask to be removed</button>
+      <a href="<%=`/delete/${trade._id}`%>" class="btn btn-danger">
+        Ask to be removed</a
+      >
     </div>
   </div>
   <br />
