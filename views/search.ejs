@@ -1,0 +1,26 @@
+<div class="row d-flex justify-content-center">
+  <% if (trades.length!=0) { %>
+  <p style="padding: 2rem; font-size: larger">
+    Wohoo! We found <%=trades.length%> trades in city "<%=term%>"
+  </p>
+  <%trades.map((item)=>{ %>
+  <div class="card col-md-3 m-3" style="width: 24rem">
+    <img
+      src="<%=`uploads/${item.image}`%>"
+      class="card-img-top responsive-img w-1"
+      style="height: 200px"
+      alt="..."
+    />
+    <div class="card-body">
+      <h5 class="card-title"><b><%=item.title%></b></h5>
+      <hr />
+      <p class="card-text"><%=item.description.substring(0,35)+"..."%></p>
+      <a href="<%=`/trades/${item._id}`%>" class="btn btn-dark">Details</a>
+    </div>
+  </div>
+  <% })} else {%>
+  <p style="padding: 2.6rem; font-size: larger">
+    No Trades found in city "<%=term%>"
+  </p>
+  <%}%>
+</div>

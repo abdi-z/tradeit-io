@@ -13,7 +13,7 @@ router.get("/", function (req, res, next) {
       console.log(err);
     } else {
       console.log(data);
-      res.render("trades", { trades: data });
+      res.render("search", { trades: data, term: srch });
     }
   });
 });
