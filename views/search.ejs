@@ -1,3 +1,50 @@
+<style>
+  .card-body button {
+    position: relative;
+    display: inline;
+    height: auto;
+    width: auto;
+    padding: 3px 15px;
+
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #383736;
+    border: 2px #383736 solid;
+    border-radius: 4px;
+    outline: 0;
+    overflow: hidden;
+    background: none;
+    z-index: 1;
+    cursor: pointer;
+
+    transition: 0.08s ease-in;
+    -o-transition: 0.08s ease-in;
+    -ms-transition: 0.08s ease-in;
+    -moz-transition: 0.08s ease-in;
+    -webkit-transition: 0.08s ease-in;
+  }
+
+  .fill:hover {
+    color: whitesmoke;
+  }
+
+  .fill:before {
+    content: "";
+    position: absolute;
+    background: #383736;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    -webkit-transition: top 0.09s ease-in;
+  }
+
+  .fill:hover:before {
+    top: 0;
+  }
+</style>
 <div class="row d-flex justify-content-center">
   <% if (trades.length!=0) { %>
   <p style="padding: 2rem; font-size: larger">
@@ -12,15 +59,24 @@
       alt="..."
     />
     <div class="card-body">
-      <h5 class="card-title"><b><%=item.title%></b></h5>
+      <% if (item.title.length > 30) { %>
+      <h5 class="card-title text-center">
+        <b><%=item.title.substring(0,25)+"..."%></b>
+      </h5>
+      <% } else { %>
+      <h5 class="card-title text-center"><b><%=item.title%></b></h5>
+      <% } %>
       <hr />
       <p class="card-text"><%=item.description.substring(0,35)+"..."%></p>
-      <a href="<%=`/trades/${item._id}`%>" class="btn btn-dark">Details</a>
+      <a href="<%=`/trades/${item._id}`%>" style="text-decoration: none"
+        ><button class="fill">Details</button></a
+      >
+      <p class="float-end"><%=item.date%></p>
     </div>
   </div>
   <% })} else {%>
-  <p style="padding: 2.6rem; font-size: larger">
-    No Trades found in city "<%=term%>"
+  <p style="padding: 2.6rem; font-size: larger; padding-bottom: 22.8rem">
+    Oops! No Trades found in city "<%=term%>"
   </p>
   <%}%>
 </div>
