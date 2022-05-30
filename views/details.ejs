@@ -10,6 +10,13 @@
     ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 </style>
+<script>
+  $(document).ready(function () {
+    "#share".click(function () {
+      console.log(window.location.href);
+    });
+  });
+</script>
 
 <div class="border ms-5 me-5 my-2 rounded" style="background-color: white">
   <div class="row m-1" style="background-color: black">
@@ -19,12 +26,7 @@
       <img
         src="<%=`/uploads/${trade.image}`%>"
         class="card-img-top responsive-img"
-        style="
-          max-width: 420px;
-          max-height: 400px;
-          min-width: 400px;
-          min-height: 400px;
-        "
+        style="max-width: 420px; max-height: 400px"
         alt="image will come here"
       />
     </div>
@@ -38,7 +40,7 @@
       <%let show="No" %> <% if(trade.availability==="on"){ %> <% show=" Yes" %>
       <% } %>
       <p>Return/Trial:<%=show%></p>
-      <a href="<%=`/delete/${trade._id}`%>" class="btn btn-danger">
+      <a href="<%=`/delete/${trade._id}`%>" class="btn btn-danger" disabled>
         Remove the trade</a
       >
     </div>
@@ -56,6 +58,9 @@
       <h3><b>Trader's Details</b></h3>
       <h4><b>Contact:</b></h4>
       <p><%=trade.contact %></p>
+      <button class="float-end btn btn-info" id="share">
+        Generate Sharing Link
+      </button>
       <h4><b>Address:</b></h4>
       <p><%=trade.address %></p>
     </div>
