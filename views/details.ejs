@@ -10,12 +10,20 @@
     ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
 <script>
-  $(document).ready(function () {
-    "#share".click(function () {
-      console.log(window.location.href);
-    });
-  });
+  // User-defined function to share some message on WhatsApp
+  function share() {
+    // collet the user input
+    var message =
+      "Hey, I found this amazing website for trading items with others. This one trade in specific got my attention " +
+      "\n" +
+      window.location.href;
+
+    // JavaScript function to open URL in new window
+    window.open("whatsapp://send?text=" + message, "_blank");
+  }
 </script>
 
 <div class="border ms-5 me-5 my-2 rounded" style="background-color: white">
@@ -59,8 +67,9 @@
       <h3><b>Trader's Details</b></h3>
       <h4><b>Contact:</b></h4>
       <p><%=trade.contact %></p>
-      <button class="float-end btn btn-info" id="share">
-        Generate Sharing Link
+      <button class="float-end btn btn-success" id="share" onclick="share()">
+        <img src="/uploads/whatsapp.png" style="padding: 5px" />Share on
+        Whatsapp
       </button>
       <h4><b>Address:</b></h4>
       <p><%=trade.address %></p>
