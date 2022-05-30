@@ -1,5 +1,5 @@
 ## Abstract
-A tradeit.io is a peer-to-peer trading platform that enables two or more users to trade and exchange items with each other. It can be used for various purposes, such as buying and selling goods, sharing resources (such as equipment), or exchanging money and hence connecting buyers and sellers of a particular item or service. 
+Tradeit.io is a peer-to-peer trading platform that enables two or more users to trade and exchange items with each other. It can be used for various purposes, such as buying and selling goods, sharing resources (such as equipment), or exchanging money and hence connecting buyers and sellers of a particular item or service. 
 
 <img width="953" alt="homepage" src="https://user-images.githubusercontent.com/92116477/170912945-6bab6d11-615c-4b31-8a60-0a513c54cf11.png">
 
