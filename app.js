@@ -7,7 +7,8 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 const methodOverride = require("method-override");
 var bodyParser = require("body-parser");
-var config = require("config");
+var env = require("dotenv").config();
+const monguri = process.env.MONGODB_URI;
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var homeRouter = require("./routes");
@@ -69,7 +70,7 @@ app.use(function (err, req, res, next) {
 });
 
 mongoose
-  .connect(config.get("db"), {
+  .connect(monguri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
