@@ -7,6 +7,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 const methodOverride = require("method-override");
 var bodyParser = require("body-parser");
+var config = require("config");
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var homeRouter = require("./routes");
@@ -17,7 +18,6 @@ var createRouter = require("./routes/create");
 var searchRouter = require("./routes/search");
 
 var app = express();
-
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -57,15 +57,6 @@ const fileStorageEngine = multer.diskStorage({
 });
 const upload = multer({ storage: fileStorageEngine });
 
-
-
-
-
-
-
-
-
-
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
@@ -78,13 +69,12 @@ app.use(function (err, req, res, next) {
 });
 
 mongoose
-  .connect(
-    "mongodb+srv://abdi:k4t5rk0o1@servercluster.q691c.mongodb.net/?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+  .connect(config.get("db"), {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("Connected to mongo..."))
   .catch((error) => console.log(error.message));
-
 
 //route get /
 //desc Loads form
