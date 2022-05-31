@@ -7,14 +7,14 @@ router.get("/", function (req, res, next) {
 });
 
 /*Delete trade*/
-router.get("/delete/:id", function (req, res, next) {
-  Trade.findByIdAndDelete(req.params.id, (err, data) => {
-    if (err) {
-      res.send(err);
-    } else {
-      res.redirect("/trades");
-    }
-  });
-});
+// router.get("/delete/:id", function (req, res, next) {
+//   Trade.findByIdAndDelete(req.params.id, (err, data) => {
+//     if (err) {
+//       res.send(err);
+//     } else {
+//       res.redirect("/trades");
+//     }
+//   });
+// });
 
 module.exports = router;
