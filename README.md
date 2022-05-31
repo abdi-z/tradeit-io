@@ -11,6 +11,8 @@ EJS as a view engine for UI template.
 MongoDB and Mongoose for nosql database and managing package.
 <br/>
 Heroku and Heroku CLI for deployment.
+<br/>
+Bootstrap 5 and JQuery for responsiveness on different resolution screens.
 
 <img width="950" alt="details" src="https://user-images.githubusercontent.com/92116477/170913030-1893eae9-05be-4caa-bce6-9c946d4caf92.png">
 
