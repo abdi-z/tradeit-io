@@ -24,6 +24,11 @@
     // JavaScript function to open URL in new window
     window.open("whatsapp://send?text=" + message, "_blank");
   }
+  function unavailable() {
+    alert(
+      "This option is currently unavailable because of mass deletion of all trades. The functionality is coded but won't be available publicily."
+    );
+  }
 </script>
 
 <div class="border ms-5 me-5 my-2 rounded" style="background-color: white">
@@ -51,7 +56,11 @@
       <!-- <a href="<%=`/delete/${trade._id}`%>" class="btn btn-danger" disabled>
         Remove the trade</a
       > -->
-      <a href="" class="btn btn-danger" disabled> Disabled remove option</a>
+      <div class="d-flex justify-content-around">
+        <a href="" class="btn btn-danger mt-4" onclick="unavailable()">
+          Disabled remove option</a
+        >
+      </div>
     </div>
   </div>
   <br />
@@ -67,12 +76,13 @@
       <h3><b>Trader's Details</b></h3>
       <h4><b>Contact:</b></h4>
       <p><%=trade.contact %></p>
-      <button class="float-end btn btn-success" id="share" onclick="share()">
-        <img src="/uploads/whatsapp.png" style="padding: 5px" />Share on
-        Whatsapp
-      </button>
       <h4><b>Address:</b></h4>
       <p><%=trade.address %></p>
     </div>
+  </div>
+  <div class="d-flex justify-content-around">
+    <button class="btn btn-success" id="share" onclick="share()">
+      <img src="/uploads/whatsapp.png" />Share on Whatsapp
+    </button>
   </div>
 </div>
